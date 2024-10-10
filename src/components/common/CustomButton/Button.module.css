@@ -1,0 +1,10 @@
+.customButton{
+    padding: 8px 1rem;
+    font-weight: 600;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.customButton:hover{
+    opacity: 0.85;
+}
