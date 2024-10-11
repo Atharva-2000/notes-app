@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./SingleNote.module.css";
 import Header from "../../components/Header/Header";
 import Button from "../../components/common/CustomButton/Button";
 import { useNavigate, useParams } from "react-router-dom";
+import { useAppContext } from "../../AppContext";
 
 const SingleNote = () => {
   const navigate = useNavigate();
 
   const { id } = useParams();
 
-  console.log(id);
+  const { getSingleNote } = useAppContext();
+
+  const [note, setNote] = useState({});
 
   const goBack = () => {
     navigate("/"); // Navigate to home page
   };
+
+  useEffect(() => {
+    const singleNote = getSingleNote(id);
+    if (singleNote) {
+      setNote(singleNote);
+    } else goBack();
+  }, []);
 
   return (
     <div className={styles.main_container}>
@@ -23,17 +33,8 @@ const SingleNote = () => {
           <Button buttonText={"Go Back"} onClick={goBack} />
         </div>
         <div className={styles.noteCard}>
-          <p className={styles.title}>Title</p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-            Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
-            aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-            imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
-            mollis pretium. Integer tincidunt. Cras dapibus.
-          </p>
+          <p className={styles.title}>{note.title}</p>
+          <p>{note.description}</p>
         </div>
       </div>
     </div>

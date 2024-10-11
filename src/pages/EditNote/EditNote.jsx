@@ -4,11 +4,15 @@ import { useNavigate } from "react-router-dom";
 import NotesForm from "../../components/NotesForm/NotesForm";
 import styles from "./EditNote.module.css";
 import Header from "../../components/Header/Header";
+import { useAppContext } from "../../AppContext";
 
 const EditNote = () => {
   const navigate = useNavigate();
 
+  const { setSelectedId } = useAppContext();
+
   const goBack = () => {
+    setSelectedId(null);
     navigate("/"); // Navigate to home page
   };
 

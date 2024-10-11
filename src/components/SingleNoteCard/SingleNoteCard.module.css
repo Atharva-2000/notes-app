@@ -1,14 +1,11 @@
 .noteCard{
-    flex-grow: 1;
-    flex-basis: 320px;
-    /* border: 1px solid grey; */
+    width: 28%;
     border-radius: 10px;
     padding: 12px;
     display: flex;
     flex-direction: column;
     gap: 12px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    /* height: 10rem;  */
 }
 
 .title{
@@ -31,4 +28,16 @@
 
 .actionIcon{
     cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .noteCard{
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 768px)  and (max-width : 1023px){
+    .noteCard{
+        width: 42%;
+    }
 }

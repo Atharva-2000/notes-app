@@ -2,11 +2,15 @@ import React from "react";
 import styles from "./SingleNoteCard.module.css";
 import { IconEdit, IconTrash } from "@tabler/icons-react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAppContext } from "../../AppContext";
 
 const SingleNoteCard = ({ note }) => {
   const navigate = useNavigate();
 
+  const { deleteNote, setSelectedId } = useAppContext();
+
   const editNote = (id) => {
+    setSelectedId(id);
     navigate("/editnote"); //navigate to edit note page
   };
 
@@ -17,8 +21,8 @@ const SingleNoteCard = ({ note }) => {
         {note.title.length >= 45 ? <span>...</span> : null}
       </p>
       <p>
-        {note.description.substring(0, 80)}
-        {note.description.length >= 80 ? (
+        {note.description.substring(0, 90)}
+        {note.description.length >= 90 ? (
           <Link to={`/${note.id}`} className={styles.readMore}>
             {" "}
             Read more.....
@@ -32,7 +36,13 @@ const SingleNoteCard = ({ note }) => {
             editNote(note.id);
           }}
         />
-        <IconTrash color="red" className={styles.actionIcon} />
+        <IconTrash
+          color="red"
+          className={styles.actionIcon}
+          onClick={() => {
+            deleteNote(note.id);
+          }}
+        />
       </div>
     </div>
   );

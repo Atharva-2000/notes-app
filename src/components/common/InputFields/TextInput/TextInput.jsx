@@ -15,7 +15,7 @@ const TextInput = ({
       type="text"
       value={value}
       onChange={(e) => {
-        onChange(e.target.value);
+        onChange(name, e.target.value);
       }}
       name={name}
       placeholder={placeholder}
