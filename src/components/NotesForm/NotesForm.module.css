@@ -1,0 +1,31 @@
+.noteFormCard{
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.title{
+    font-weight: bold;
+    font-size:larger;
+}
+
+.formField{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin: auto;
+}
+
+.buttonContainer{
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}

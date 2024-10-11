@@ -1,0 +1,34 @@
+.noteCard{
+    flex-grow: 1;
+    flex-basis: 320px;
+    /* border: 1px solid grey; */
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* height: 10rem;  */
+}
+
+.title{
+    font-weight: bold;
+}
+
+.readMore{
+    color: rgb(48, 108, 206);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.actionButtonsContainer{
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end; 
+    gap: 12px;
+}
+
+.actionIcon{
+    cursor: pointer;
+}

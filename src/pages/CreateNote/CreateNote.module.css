@@ -6,21 +6,15 @@
     padding: 1rem;
 }
 
-.notesContainer{
-    width: 80%;
+.noteFormContainer{
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.notesList{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
 @media screen and (max-width: 767px) {
-    .notesContainer{
+    .noteFormContainer{
         width: 95%;
     }
 }
